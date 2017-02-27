@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <html lang="ru">
+  <title>jQuery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script   src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script> 
+  <style type="text/css">
+      .somediv{height: 150px; width: 150px; display: inline-block; cursor: pointer;}
+      #div1{background-color: red;}
+      #div2{background-color: green;}
+      #div3{background-color: blue;}
+      #div4{background-color: yellow;}
+      #div5{background-color: grey;}
+      #modalDiv{
+      	width: 400px;
+      	height: 400px;
+      	position: absolute;
+      	background-color: green; 
+      	display: none;
+      	cursor: pointer;
+      }
+  </style>
+</head>
+<body>
+	<div id="div1" class="somediv"></div>
+	<div id="div2" class="somediv"></div>
+	<div id="div3" class="somediv"></div>
+	<div id="div4" class="somediv"></div>
+	<div id="div5" class="somediv"></div>
+	<div id="modalDiv"></div>
+
+	<script>
+	var anymTime = 500;
+	$('.somediv').on('click', function(e){
+		var modal = $('#modalDiv');
+		modal.css('top', (window.innerHeight - modal.height()) / 2);
+		modal.css('left', (window.innerWidth - modal.width()) / 2); 
+		modal.css('background-color', $(e.target).css('background-color'));
+		modal.fadeIn(anymTime);   
+	})
+
+	$('#modalDiv').on('click', function(){
+		$(this).fadeOut(anymTime);
+	});
+
+	</script>
+<body>
+
+    </html>
