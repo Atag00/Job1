@@ -1,1 +1,5 @@
+
 print("Hallo");
+print("Hallo my friend");
+print("Hallo Hallo");
+
